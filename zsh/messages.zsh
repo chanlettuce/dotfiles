@@ -1,3 +1,5 @@
 echo -e "\e[36m========== Shortcut Keys ==========\e[m"
-echo "Ctrl+J(^j) autosuggest-accept"
-echo "Ctrl+R(^r) serch-command-history"
+echo -e "Ctrl+J(^j)\t Accept Suggest\e[33m(not working in VS Code)\e[m"
+echo -e "Ctrl+R(^r)\t Search command history"
+echo -e "Ctrl+E(^e)\t Search cd command history\e[33m(not working in VS Code)\e[m"
+echo -e "Ctrl+X(^x)\t Search child directory"
