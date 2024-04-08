@@ -4,23 +4,23 @@ if builtin command -v bat >/dev/null; then
 fi
 
 # ls -> exa
-if type "exa" > /dev/null 2>&1; then
-    alias ls='exa'
-    alias l='exa -F'
-    alias la='exa -a'
-    alias ll='exa -l'
+if type "exa" >/dev/null 2>&1; then
+  alias ls='exa'
+  alias l='exa -F'
+  alias la='exa -a'
+  alias ll='exa -l'
 else
-    alias ls='ls'
-    alias l='ls -CF'
-    alias la='ls -A'
-    alias ll='ls -l'
+  alias ls='ls'
+  alias l='ls -CF'
+  alias la='ls -A'
+  alias ll='ls -l'
 fi
 
 # ls -> bpytop
-if type "bpytop" > /dev/null 2>&1; then
-    alias top='bpytop'
+if type "bpytop" >/dev/null 2>&1; then
+  alias top='bpytop'
 else
-    alias top='top'
+  alias top='top'
 fi
 
 # Docker
