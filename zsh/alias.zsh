@@ -16,6 +16,13 @@ else
     alias ll='ls -l'
 fi
 
+# ls -> bpytop
+if type "bpytop" > /dev/null 2>&1; then
+    alias top='bpytop'
+else
+    alias top='top'
+fi
+
 # Docker
 alias di="docker images"
 alias dr="docker run --rm"
