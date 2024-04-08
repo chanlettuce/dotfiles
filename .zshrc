@@ -29,6 +29,7 @@ source $SCRIPT_DIR/zsh/p10k.zsh
 source $SCRIPT_DIR/zsh/aliases.zsh
 source $SCRIPT_DIR/zsh/functions.zsh
 source $SCRIPT_DIR/zsh/check_git_status.zsh
+source $SCRIPT_DIR/zsh/messages.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
