@@ -1,0 +1,6 @@
+alias:docker ## ds ## docker stop $(docker ps -q)
+alias:docker ## dcb ## docker-compose build
+alias:docker ## dcu ## docker-compose up
+alias:docker ## dcd ## docker-compose down
+alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+alias:docker ## drm ## docker system prune
