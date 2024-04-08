@@ -27,6 +27,7 @@ source $SCRIPT_DIR/zsh/plugins.zsh
 source $SCRIPT_DIR/zsh/config.zsh
 source $SCRIPT_DIR/zsh/p10k.zsh
 source $SCRIPT_DIR/zsh/alias.zsh
+source $SCRIPT_DIR/zsh/check_update_dotfiles.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
