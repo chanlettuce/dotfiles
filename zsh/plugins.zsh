@@ -3,7 +3,9 @@ zinit light romkatv/powerlevel10k
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 bindkey '^j' autosuggest-accept
+
 zinit light paulirish/git-open
+zinit light supercrabtree/k
 
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
