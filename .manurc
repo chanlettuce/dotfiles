@@ -1,8 +1,12 @@
-alias:docker ## ds ## docker stop $(docker ps -q)
-alias:docker ## dcb ## docker-compose build
-alias:docker ## dcu ## docker-compose up
-alias:docker ## dcd ## docker-compose down
 alias:docker ## dps ## docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+alias:docker ## di ## docker images
+alias:docker ## dr ## docker run --rm
+alias:docker ## ds ## docker stop $(docker ps -q)
+alias:docker ## dcps ## docker compose ps
+alias:docker ## dcb ## docker compose build
+alias:docker ## dcu ## docker compose up
+alias:docker ## dcd ## docker compose down
+alias:docker ## dcl ## docker compose logs
 alias:docker ## drm ## docker system prune
 function:user ## cns ## Check NPM scripts from package.json
 function:user ## cdp ## cd project directory
