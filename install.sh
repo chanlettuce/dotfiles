@@ -27,6 +27,14 @@ if [ -z "$(command -v peco)" ]; then
   sudo apt -y install peco
 fi
 
+# HackGen
+wget https://github.com/yuru7/HackGen/releases/download/v2.9.0/HackGen_NF_v2.9.0.zip
+unzip HackGen_NF_v2.9.0.zip
+mv HackGen_NF_v2.9.0 HackGen_NF
+sudo cp -r HackGen_NF /usr/local/share/fonts/
+fc-cache -vf
+rm -rf HackGen_NF HackGen_NF_v2.9.0.zip
+
 # zsh
 ln -sv ~/dotfiles/.zshrc ~/
 
