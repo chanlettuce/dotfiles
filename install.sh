@@ -15,7 +15,7 @@ if [ -z "$(command -v exa)" ]; then
   sudo apt -y install exa
 fi
 
-# peco
+# jq
 if [ -z "$(command -v jq)" ]; then
   echo "--- Install jq is Start! ---"
   sudo apt -y install jq
