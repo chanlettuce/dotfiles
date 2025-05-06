@@ -3,12 +3,12 @@ if builtin command -v bat >/dev/null; then
   alias cat="bat"
 fi
 
-# ls -> exa
-if type "exa" >/dev/null 2>&1; then
-  alias ls='exa'
-  alias l='exa -F'
-  alias la='exa -a'
-  alias ll='exa -l'
+# ls -> eza
+if type "eza" >/dev/null 2>&1; then
+  alias ls='eza --icons --git'
+  alias l='eza --icons --git -F'
+  alias la='eza --icons --git -a'
+  alias ll='eza --icons --git -l'
 else
   alias ls='ls'
   alias l='ls -CF'

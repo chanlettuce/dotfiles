@@ -9,10 +9,10 @@ if [ -z "$(command -v bpytop)" ]; then
   sudo apt -y install bpytop
 fi
 
-# exa
-if [ -z "$(command -v exa)" ]; then
-  echo "--- Install exa is Start! ---"
-  sudo apt -y install exa
+# exa -> eza
+if [ -z "$(command -v eza)" ]; then
+  echo "--- Install eza is Start! ---"
+  sudo apt -y install eza
 fi
 
 # jq
