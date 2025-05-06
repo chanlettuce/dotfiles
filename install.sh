@@ -24,7 +24,21 @@ fi
 # peco
 if [ -z "$(command -v peco)" ]; then
   echo "--- Install peco is Start! ---"
-  sudo apt -y install peco
+  # CPUアーキテクチャの判定
+  ARCH=$(uname -m)
+  if [ "$ARCH" = "x86_64" ]; then
+    FILENAME=peco_linux_amd64
+  elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then
+    FILENAME=peco_linux_arm64
+  else
+    echo "未対応のアーキテクチャです: $ARCH"
+    exit 1
+  fi
+  wget https://github.com/peco/peco/releases/download/v0.5.11/$FILENAME.tar.gz
+  tar -xzf $FILENAME.tar.gz
+  sudo mv $FILENAME/peco /usr/local/bin/
+  rm -rf $FILENAME
+  rm $FILENAME.tar.gz
 fi
 
 # HackGen
