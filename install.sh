@@ -1,6 +1,8 @@
 #!/bin/bash
 #for Ubuntu
 
+touch ~/dotfiles/zsh/machine.zsh
+
 sudo apt update
 
 # bpytop
