@@ -1,0 +1,4 @@
+# Snap
+export PATH=$PATH:/snap/bin
+# Claude Code
+export PATH="$HOME/.local/bin:$PATH"
