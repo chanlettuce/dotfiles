@@ -43,6 +43,12 @@ if [ -z "$(command -v peco)" ]; then
   rm $FILENAME.tar.gz
 fi
 
+# Claude Code
+if [ -z "$(command -v claude)" ]; then
+  echo "--- Install Claude Code is Start! ---"
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
 # HackGen
 wget https://github.com/yuru7/HackGen/releases/download/v2.9.0/HackGen_NF_v2.9.0.zip
 unzip HackGen_NF_v2.9.0.zip
