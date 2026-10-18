@@ -8,13 +8,22 @@ typeset -U path PATH
 path=($HOME/.local/bin $path)
 
 # nvm: nvm.sh は読まずに、既定バージョンの node だけ PATH に入れる（nvm 本体は .zshrc で読む）
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 if [[ -d $NVM_DIR/versions/node ]]; then
+  # nvm と同じく、既定のバージョンが入っていなければ何も足さない（ターミナルと食い違わないように）
   () {
-    local want bins
+    local want bins i
     [[ -r $NVM_DIR/alias/default ]] && want=$(<$NVM_DIR/alias/default)
-    bins=($NVM_DIR/versions/node/v${want#v}*/bin(N/nOn))
-    (( $#bins )) || bins=($NVM_DIR/versions/node/v*/bin(N/nOn))
+    # lts/* → lts/krypton → v24.21.0 のようなエイリアスの連鎖をたどる
+    for i in 1 2 3 4; do
+      [[ -n $want && -f $NVM_DIR/alias/$want ]] || break
+      want=$(<$NVM_DIR/alias/$want)
+    done
+    case $want in
+      ('') ;;
+      (node|stable) bins=($NVM_DIR/versions/node/v*/bin(N/nOn)) ;;
+      (*) bins=($NVM_DIR/versions/node/v${want#v}(|.*)/bin(N/nOn)) ;;
+    esac
     (( $#bins )) && path=($bins[1] $path)
   }
 fi
