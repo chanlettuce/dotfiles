@@ -1,3 +1,18 @@
+SCRIPT_DIR=$HOME/dotfiles
+
+# マシン固有の関数（claude ラッパーなど）。Claude Code の Bash ツールからも使うので、対話判定より前で読む
+[[ -r $SCRIPT_DIR/zsh/machine.zsh ]] && source $SCRIPT_DIR/zsh/machine.zsh
+
+# Claude Code は非対話の login シェルで ~/.zshrc を読み、そのときのオプション・関数・エイリアスを
+# スナップショットに保存して、以後の Bash ツールのコマンドに持ち込む
+if [[ -n $CLAUDECODE ]]; then
+  setopt no_nomatch # 一致しないグロブ（--include=*.md や URL の ?）をエラーにせず、そのまま渡す（bash と同じ）
+fi
+
+# ここから下は対話シェル専用。エイリアス（ls=eza, cat=bat）やプラグイン、メッセージ表示を
+# Claude Code・zsh -c・スクリプトに持ち込まない
+[[ -o interactive ]] || return 0
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -21,18 +36,15 @@ zi light-mode for \
   z-shell/z-a-meta-plugins \
   @annexes @zunit
 
-SCRIPT_DIR=$HOME/dotfiles
-
 source $SCRIPT_DIR/zsh/plugins.zsh
 source $SCRIPT_DIR/zsh/config.zsh
 source $SCRIPT_DIR/zsh/p10k.zsh
 source $SCRIPT_DIR/zsh/aliases.zsh
 source $SCRIPT_DIR/zsh/functions.zsh
 source $SCRIPT_DIR/zsh/check_git_status.zsh
-source $SCRIPT_DIR/zsh/machine.zsh
 source $SCRIPT_DIR/zsh/messages.zsh
 
-export NVM_DIR="$HOME/.nvm"
+# NVM_DIR と既定の node の PATH は .zshenv で設定済み。ここでは nvm コマンドを使えるようにする
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

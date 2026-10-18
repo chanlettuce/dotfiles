@@ -1,0 +1,3 @@
+# マシン固有の PATH・環境変数（.zshenv から読む。何も出力しないこと）
+# Snap
+path+=(/snap/bin)

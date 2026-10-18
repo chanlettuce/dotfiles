@@ -1,4 +1,2 @@
-# Snap
-export PATH=$PATH:/snap/bin
-# Claude Code
-export PATH="$HOME/.local/bin:$PATH"
+# マシン固有の関数（.zshrc から読む。Claude Code の Bash ツールからも使える）
+# PATH・環境変数は machine.zshenv に書く

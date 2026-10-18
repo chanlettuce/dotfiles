@@ -1,7 +1,7 @@
 #!/bin/bash
 #for Ubuntu
 
-touch ~/dotfiles/zsh/machine.zsh
+touch ~/dotfiles/zsh/machine.zsh ~/dotfiles/zsh/machine.zshenv
 
 sudo apt update
 
@@ -58,6 +58,7 @@ fc-cache -vf
 rm -rf HackGen_NF HackGen_NF_v2.9.0.zip
 
 # zsh
+ln -sv ~/dotfiles/.zshenv ~/
 ln -sv ~/dotfiles/.zshrc ~/
 
 sudo apt -y install zsh
