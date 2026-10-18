@@ -44,7 +44,9 @@ source $SCRIPT_DIR/zsh/functions.zsh
 source $SCRIPT_DIR/zsh/check_git_status.zsh
 source $SCRIPT_DIR/zsh/messages.zsh
 
-# NVM_DIR と既定の node の PATH は .zshenv で設定済み。ここでは nvm コマンドを使えるようにする
+# 既定の node の PATH は .zshenv で設定済み。ここでは nvm コマンドを使えるようにする
+# （~/.zshenv のリンクがないマシンでも nvm を読めるよう、NVM_DIR はここでも設定する）
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
